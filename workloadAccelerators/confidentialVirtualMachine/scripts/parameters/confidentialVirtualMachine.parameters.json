@@ -1,0 +1,43 @@
+{
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "parDeploymentPrefix": {
+      "type": "string",
+      "usedBy": "Confidential virtual machine template",
+      "minLength": 2,
+      "maxLength": 5,
+      "value": null,
+      "description": "The prefix that will be added to all resources created by this deployment."
+    },
+    "parDeploymentLocation": {
+      "type": "string",
+      "usedBy": "Confidential virtual machine template",
+      "value": null,
+      "description": "Location of the deployment."
+    },
+    "parHubNetworkResourceId": {
+      "type": "string",
+      "usedBy": "Confidential virtual machine template",
+      "value": null,
+      "description": "Resource ID of the SLZ's hub vnet from the %slzprefix%-connectivity subscription."
+    },
+    "parAdminPasswordOrKey": {
+      "type": "string",
+      "usedBy": "Confidential virtual machine template",
+      "value": null,
+      "description": "The password for the Admin user created on Confidential Virtual Machine."
+    },
+    "parVnetAddressPrefix": {
+      "type": "string",
+      "usedBy": "Confidential virtual machine template",
+      "value": null,
+      "description": "IP address space of the VNET created for this template, in CIDR notation. Must be unique across all vnets peered against the SLZ hub vnet as referenced above."
+    },
+    "parAuthenticationType": {
+      "type": "string",
+      "usedBy": "Confidential virtual machine template",
+      "value": "password",
+      "description": "The authentication type of the VM."
+    }
+  }
+}

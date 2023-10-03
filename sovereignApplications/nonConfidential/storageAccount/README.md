@@ -1,0 +1,3 @@
+# Contoso HR Sample Application - Non-Confidential Storage Account
+
+This sample application is part of the [hrAppWorkload](../../confidential/hrAppWorkload/README.md) confidential sample application and is a Bicep module that an Azure Storage Account with a customer managed key into a target subscription. This is used to verify, if the enforcement of confidentiality policies does work as expected in respective subscriptions.
