@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "parTenantId": {
+        "value": ""
+      },
+      "parLocation": {    
+        "value": ""
+      },
+      "parKeyVaultName": {    
+        "value": ""
+      },
+      "parKeyVaultKeyName": {    
+        "value": "",
+        "metadata": {
+            "description": "Name of the customer-managed key in the key vault."
+          }
+      },
+      "parKeyExpirationTime": {    
+        "value": 0,
+        "metadata": {
+            "description": "Expiration time of the customer-managed key in the key vault."
+          }
+      },
+      "parStorageAccountName": {    
+        "value": ""
+      },
+      "parUserAssignedIdentityName": {    
+        "value": "",
+        "metadata": {
+            "description": "Name of the customer-managed key in the key vault."
+          }
+      }
+    }
+  }

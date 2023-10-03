@@ -1,0 +1,35 @@
+#cloud-config
+package_upgrade: true
+packages:
+- dotnet-sdk-6.0
+- libarchive-tools
+users:
+  - default
+  - name: contosohr
+    shell: /bin/bash
+write_files:
+- path: /etc/systemd/system/ContosoHR.service
+  owner: root:root
+  content: |
+    [Unit]
+    Description=ContosoHR
+
+    [Service]
+    Type=simple
+    ExecStart=/usr/bin/dotnet run --launch-profile Production
+    WorkingDirectory=/home/contosohr/ContosoHR
+    Restart=always
+    RestartSec=10
+    User=contosohr
+    Group=contosohr
+
+    [Install]
+    WantedBy=multi-user.target
+runcmd:
+- wget https://hrwebapp.blob.core.windows.net/contosohr/ContosoHR.zip
+- mkdir --parents /home/contosohr/ContosoHR
+- bsdtar --extract --file ContosoHR.zip --directory /home/contosohr/ContosoHR --strip-components=1
+- chown --recursive contosohr:contosohr /home/contosohr/
+- systemctl daemon-reload
+- systemctl enable ContosoHR.service
+- systemctl start ContosoHR.service

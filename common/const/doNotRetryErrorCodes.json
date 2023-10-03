@@ -1,0 +1,21 @@
+{
+    "description": "This file contains all the error codes for while the retry logic would not be triggered",
+    "errorCodes": [
+        {
+            "code": "RequestDisallowedByPolicy",
+            "errorDescription": "A resource deployment was disallowed by policy"
+        },
+        {
+            "code": "MissingSubscriptionRegistration",
+            "errorDescription": "The subscription must be registered to use the namespace."
+        },
+        {
+            "code": "ReferencedResourceNotProvisioned",
+            "errorDescription": "Cannot proceed with operation because the resource is not in Succeeded state."
+        },
+        {
+            "code": "UserNotAuthorized",
+            "errorDescription": "User is not authorized to create a particular resource/subscription"
+        }
+    ]
+}

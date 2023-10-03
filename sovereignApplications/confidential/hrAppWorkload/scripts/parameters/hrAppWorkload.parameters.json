@@ -1,0 +1,49 @@
+{
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "parDeploymentLocation": {
+      "type": "string",
+      "usedBy": "hrapp",
+      "value": "eastus",
+      "description": "Location of the deployment."
+    },
+    "parHubNetworkResourceId": {
+      "type": "string",
+      "usedBy": "hrapp",
+      "value": null,
+      "description": "Resource ID of the SLZ's hub vnet from the %slzprefix%-connectivity subscription."
+    },
+    "parAdminPasswordOrKey": {
+      "type": "string",
+      "usedBy": "hrapp",
+      "value": null,
+      "description": "The password or public key (see option parAuthenticationType) for the Admin user created on Confidential Virtual Machine."
+    },
+    "parSqlAdministratorLoginPassword": {
+      "type": "string",
+      "usedBy": "hrapp",
+      "value": null,
+      "description": "The password for the administrator user created on the SQL Server."
+    },
+    "parDeploymentPrefix": {
+      "type": "string",
+      "usedBy": "hrapp",
+      "minLength": 2,
+      "maxLength": 5,
+      "value": null,
+      "description": "Prefix added to some of the resources deployed."
+    },
+    "parVnetAddressPrefix": {
+      "type": "string",
+      "usedBy": "hrapp",
+      "value": null,
+      "description": "IP address space of the VNET created for this workload, in CIDR notation. Must be unique across all vnets peered against the SLZ hub vnet as referenced above."
+    },
+    "parAuthenticationType": {
+      "type": "string",
+      "usedBy": "hrapp",
+      "value": "password",
+      "description": "The authentication type of the VM."
+    }
+  }
+}
