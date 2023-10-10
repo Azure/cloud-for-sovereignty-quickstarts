@@ -24,7 +24,7 @@ Now, let's go over some of the scenarios of managing the application.
     * Once you connected, expand Databases - {your-db} - HR.Employees table. Right select on the table and Select top 1000 Rows
     * You should be able to see clear text for SSN and Salary as shown in the image [SQL Query Plain](../media/query-sql-plain.png)
 
-1. As a malicious SQL database admin/owner (or cloud operator), I can't see employee confidential data if I don't use `Enable Always Encrypted (column encryption)` and `Enable secure enclaves` options with the correct enclave attestation service Url.
+1. As a malicious SQL database admin, owner, or cloud operator, I can't see employee confidential data if I don't use `Enable Always Encrypted (column encryption)` and `Enable secure enclaves` options with the correct enclave attestation service Url.
     * Connect with the SqlAdministratorLogin: `hrapp-admin` and the password that you have set in the parameter file, and uncheck `Enable Always Encrypted (column encryption)` and `Enable secure enclaves` in the Always Encrypted tab, as shown in the images [SQL Connect 5](../media/connect-to-sql-5.png), [SQL Connect 4](../media/connect-to-sql-4.png)
 
     * Once you connected, expand Databases - {your-db} - HR.Employees table. Right select on the table and Select top 1000 Rows
