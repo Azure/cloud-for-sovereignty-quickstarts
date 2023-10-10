@@ -3,7 +3,7 @@
 At this point, [HR application architecture](../media/architecture-current.png) was deployed in your Sovereign Landing Zone.
 Now, let's go over some of the scenarios of managing the application.
 
-1. Connect to ContosoHR Web App to perform basic operations on HR app:
+1. As an HR authorized user, connect to ContosoHR Web App to perform basic operations on HR app:
 
     * Connect to your admin VM and open a browser.
     * Navigate to https://{VM-IP-address}:5001. On first run, you see a TLS/SSL warning, telling you that the connection may not be secure. This warning is to be expected and is because we're using a self-signed certificate for the ContosoHR service. Select through this warning; the connection is assuredly secure despite it (though in the general case, on the public Internet, you would do right to be *cautious if such a warning shows up!)
@@ -24,13 +24,13 @@ Now, let's go over some of the scenarios of managing the application.
     * Once you connected, expand Databases - {your-db} - HR.Employees table. Right select on the table and Select top 1000 Rows
     * You should be able to see clear text for SSN and Salary as shown in the image [SQL Query Plain](../media/query-sql-plain.png)
 
-1. As a malicious SQL database admin/owner, I can't see employee confidential data if I don't use `Enable Always Encrypted (column encryption)` and `Enable secure enclaves` options with the correct enclave attestation service Url.
+1. As a malicious SQL database admin/owner (or cloud operator), I can't see employee confidential data if I don't use `Enable Always Encrypted (column encryption)` and `Enable secure enclaves` options with the correct enclave attestation service Url.
     * Connect with the SqlAdministratorLogin: `hrapp-admin` and the password that you have set in the parameter file, and uncheck `Enable Always Encrypted (column encryption)` and `Enable secure enclaves` in the Always Encrypted tab, as shown in the images [SQL Connect 5](../media/connect-to-sql-5.png), [SQL Connect 4](../media/connect-to-sql-4.png)
 
     * Once you connected, expand Databases - {your-db} - HR.Employees table. Right select on the table and Select top 1000 Rows
     * You should see cipher text for SSN and Salary as shown in the image [SQL Query Cipher](../media/query-sql-cipher.png)
 
-1. As HR Admin, I have access to an immutable ledger of transition history for audit and to help meet regulatory compliance. Logs are streamed to Confidential Ledger.
+1. As HR Admin authorized user, I have access to an immutable ledger of transition history for audit and to help meet regulatory compliance. Logs are streamed to Confidential Ledger.
 
     * To retrieve your logs from the Azure Confidential Ledger, use the [Confidential Ledger Client](../../contosoHR/ConfidentialLedgerClient/README.md) provided for this purpose.
     * To run the client, you need to connect to admin VM, then you need to build it, as documented in the link earlier. Then step into the Confidential Ledger Client directory and execute the following commands:

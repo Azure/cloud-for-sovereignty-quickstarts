@@ -13,14 +13,14 @@ The personas and their corresponding roles are listed as follows:
 | **Persona** | **Description** |
 | - | - |
 | Partner Cloud Administrator | I can successfully deploy a confidential workload into confidential Management Groups | 
-| Partner Cloud Administrator | I get blocked by policies when deploying a non-confidential workload into confidential Management Groups |
+| Partner Cloud Operator | I get blocked by policies when deploying a non-confidential workload into confidential Management Groups |
 | Customer Cloud Administrator | I can manage an HR app securely and confidentially via a web application   | 
 | Customer Cloud Administrator | I can perform basic operations {list all employees, get employee by id, create a new employee, update salary, delete employee} on an HR app and confidential data will be protected if I don’t have the proper rights |
-| HR Administrator | I can view encrypted data using Enable Always Encrypted (column encryption) and Enable secure enclaves options |
-| Customer Cloud Administrator | As a malicious SQL database owner, I will be denied access to employee confidential data |
+| HR Administrator Authorized | I can view encrypted data using Enable Always Encrypted (column encryption) and Enable secure enclaves options |
+| Customer Cloud Operator | As a malicious SQL database owner, I will be denied access to employee confidential data |
 | Cloud Security Officer | I have access to an immutable ledger of transition history for audit and to help meet regulatory compliance |
-| Malicious VM Administrator | I will be denied access to application logs and confidential employee data |
-| Malicious VM Administrator | With the access to Hypervisor, I will be denied access to the VM, including application binaries and in-memory data |
+| Malicious Cloud Operator | I will be denied access to application logs and confidential employee data |
+| Malicious Cloud Operator | With the access to Hypervisor, I will be denied access to the VM, including application binaries and in-memory data |
 
 ## Next step
 
