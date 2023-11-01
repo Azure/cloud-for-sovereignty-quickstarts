@@ -54,6 +54,7 @@ You're now connected to the administrative VM workstation. Unless otherwise spec
 
 1. As the subnet was established in this deployment, remember to apply the same of subnet value back to Sovereign Landing Zone using the parCustomSubnets parameter if you choose to deploy the application based on it. Failing to do so may result in an "InUseSubnetCannotBeDeleted" error when rerunning the Sovereign Landing Zone deployment script. Below is the parCustomSubnets parameter example in Sovereign Landing Zone:
 
+    ``` json
     "parCustomSubnets":{
     "type":"array",
     "usedBy":"all and platform",
@@ -65,6 +66,7 @@ You're now connected to the administrative VM workstation. Unless otherwise spec
     ],
     "description":"List of other subnets to deploy on the hub VNET and their CIDR ranges."
     }
+    ```
 
 ### Next step
 
