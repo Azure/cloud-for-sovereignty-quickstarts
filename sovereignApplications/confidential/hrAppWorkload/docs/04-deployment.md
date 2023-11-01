@@ -52,7 +52,18 @@ You're now connected to the administrative VM workstation. Unless otherwise spec
 
 1. Navigate to the virtual machine and copy the private IP address that was allocated to the VM. You'll need [this IP](../media/vm.png) in the next step to navigate to the HR Web App UI.
 
-1. As the subnet was established in this deployment, remember to apply the same of subnet value back to Sovereign Landing Zone using the parCustomSubnets parameter if you choose to deploy the application based on it. Failing to do so may result in an "InUseSubnetCannotBeDeleted" error when rerunning the Sovereign Landing Zone deployment script.
+1. As the subnet was established in this deployment, remember to apply the same of subnet value back to Sovereign Landing Zone using the parCustomSubnets parameter if you choose to deploy the application based on it. Failing to do so may result in an "InUseSubnetCannotBeDeleted" error when rerunning the Sovereign Landing Zone deployment script. Below is the parCustomSubnets parameter example in Sovereign Landing Zone:
+    "parCustomSubnets":{
+    "type":"array",
+    "usedBy":"all and platform",
+    "value":[
+        {
+            "name":"AdminVmSubnet",
+            "ipAddressRange":"10.20.100.0/24"
+        }
+    ],
+    "description":"List of other subnets to deploy on the hub VNET and their CIDR ranges."
+    }
 
 ### Next step
 
