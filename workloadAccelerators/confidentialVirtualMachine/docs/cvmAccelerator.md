@@ -69,7 +69,7 @@ There's no hard dependency of [Sovereign Landing Zone (SLZ)](https://github.com/
     * Connect to your VM through the *Connect/Bastion* link on its page in the Azure Portal.
     * Find the VM in the Azure portal, click the *Connect/Go to Bastion*, then enter the login credentials for the VM and selet *Connect*. See [Connect to VM Screen 1](../../../sovereignApplications/confidential/hrAppWorkload/media/connect-to-VM1.png) and [Connect to VM Screen 2](../../../sovereignApplications/confidential/hrAppWorkload/media/connect-to-VM2.png) for illustration. You provided the admin username in the parameters file `parAdminUsername`, and you provided the password in the parameter `parAdminPasswordOrKey`
 
-1. As the subnet was established in this deployment, remember to apply the same of subnet value back to Sovereign Landing Zone using the parCustomSubnets parameter if you choose to deploy the application based on it. Failing to do so may result in an "InUseSubnetCannotBeDeleted" error when rerunning the Sovereign Landing Zone deployment script. Below is the parCustomSubnets parameter example in Sovereign Landing Zone:
+1. As the subnet was established in this deployment, remember to apply the same subnet value back to Sovereign Landing Zone using the parCustomSubnets parameter if you choose to deploy the application based on it. Failing to do so may result in an "InUseSubnetCannotBeDeleted" error when rerunning the Sovereign Landing Zone deployment script. Below is the parCustomSubnets parameter example in Sovereign Landing Zone:
 
     ``` json
     "parCustomSubnets":{
