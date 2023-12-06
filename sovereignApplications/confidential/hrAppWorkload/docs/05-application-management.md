@@ -61,7 +61,7 @@ Now, let's go over some of the scenarios of managing the application.
 
 1. Explore the SLZ Dashboard compliance for your subscription, which has the sovereign workload application deployed
     * Navigate to your SLZ Dashboard. The Sovereign Landing Zone Preview Compliance Dashboard  can be accessed in the Dashboards section of the Azure portal. The naming convention follows the pattern ${parDeploymentPrefix}-Sovereign-Landing-Zone-Dashboard-Preview-${parDeploymentLocation}, utilizing the parameters provided during SLZ deployment.
-    * Notice that the `Overall resources compliance rate` and `Overall confidential compliance score` have changed as you have deployed a confidential application, which is compliant with `SLZ Confidential Policies`, which can be found under `Confidential Corp` confidential policies. See [image](../media/slz-compliance-dashboard.png) for details.
+    * Notice that the `Overall resources compliance rate` and `Overall confidential compliance score` have changed as you have deployed a confidential application, which is compliant with `SLZ Confidential Policies`, which can be found under `Confidential Online` confidential policies. See [image](../media/slz-compliance-dashboard.png) for details.
 
 
 ## Next step

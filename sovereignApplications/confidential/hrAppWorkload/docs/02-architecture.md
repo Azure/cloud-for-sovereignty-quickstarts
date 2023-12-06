@@ -1,6 +1,6 @@
 # Application architecture
 
-The sovereign application is deployed in a confidential Sovereign Landing Zone environment, specifically in the *Confidential Corp* Management Group. To learn more about SLZ architecture and the Management Groups, see [Architecture of the Sovereign Landing Zone (SLZ) Preview](https://github.com/Azure/sovereign-landing-zone/blob/main/docs/02-Architecture.md).
+The sovereign application is deployed in a confidential Sovereign Landing Zone environment, specifically in the *Confidential Online* Management Group. To learn more about SLZ architecture and the Management Groups, see [Architecture of the Sovereign Landing Zone (SLZ) Preview](https://github.com/Azure/sovereign-landing-zone/blob/main/docs/02-Architecture.md).
 
 ## Azure capabilities in application architecture
 

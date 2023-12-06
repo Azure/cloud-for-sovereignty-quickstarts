@@ -24,7 +24,7 @@ You're now connected to the administrative VM workstation. Unless otherwise spec
     cd .\cloud-for-sovereignty-quickstarts\
     ```
 
-1. Run the given commands, one at a time, to authenticate to Azure (note that due to different authentication contexts for the Az and SqlServer PowerShell modules, both of these commands trigger popup sign in prompts). For this authentication, use the deployment tenant credentials and **NOT** your GitHub credentials. <your-subscription-id> is the [subscription created](03.1-subscription.md) under SLZ confidential corp management group in previous step.
+1. Run the given commands, one at a time, to authenticate to Azure (note that due to different authentication contexts for the Az and SqlServer PowerShell modules, both of these commands trigger popup sign in prompts). For this authentication, use the deployment tenant credentials and **NOT** your GitHub credentials. <your-subscription-id> is the [subscription created](03.1-subscription.md) under SLZ confidential online management group in previous step.
 
     ``` powershell
     Connect-AzAccount -Subscription <your-subscription-id>
