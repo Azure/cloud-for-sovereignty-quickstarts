@@ -331,7 +331,7 @@ module modPeeringToHub '../../../../common/modules/module.peering.bicep' = {
     parHomeNetworkName: resVirtualNetwork.name
     parRemoteNetworkId: parHubNetworkResourceId
     parAllowGatewayTransit: false
-    parUseRemoteGateways: true
+    parUseRemoteGateways: false
   }
 }
 
