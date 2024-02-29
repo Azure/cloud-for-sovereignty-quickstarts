@@ -12,10 +12,6 @@
         {
             "code": "ReferencedResourceNotProvisioned",
             "errorDescription": "Cannot proceed with operation because the resource is not in Succeeded state."
-        },
-        {
-            "code": "UserNotAuthorized",
-            "errorDescription": "User is not authorized to create a particular resource/subscription"
         }
     ]
 }

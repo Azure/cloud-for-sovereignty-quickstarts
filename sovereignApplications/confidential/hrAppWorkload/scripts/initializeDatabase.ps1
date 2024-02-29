@@ -94,20 +94,21 @@ try {
     Invoke-Sqlcmd @varParams
 
     # Generate CMK settings using key from key vault
-    $varCmkSettings = New-SqlAzureKeyVaultColumnMasterKeySettings -KeyURL $parColumnMasterKeyUrl -AllowEnclaveComputations
+    $keyVaultAccessToken = (Get-AzAccessToken -ResourceUrl https://vault.azure.net).Token
+    $varCmkSettings = New-SqlAzureKeyVaultColumnMasterKeySettings -KeyURL $parColumnMasterKeyUrl -AllowEnclaveComputations -KeyVaultAccessToken $keyVaultAccessToken
 
     # Provision CMK and CEK to SQL Server
     Write-Information ">>> Provisioning Always Encrypted keys." -InformationAction Continue
     $Database = Get-SqlDatabase -ConnectionString $varDbConnectionString
     New-SqlColumnMasterKey -Name "CMK1" -InputObject $Database -ColumnMasterKeySettings $varCmkSettings
-    New-SqlColumnEncryptionKey -Name "CEK1" -InputObject $Database -ColumnMasterKey "CMK1"
+    New-SqlColumnEncryptionKey -Name "CEK1" -InputObject $Database -ColumnMasterKey "CMK1" -KeyVaultAccessToken $keyVaultAccessToken
 
     # Encrypt the selected columns
     Write-Information ">>> Encrypting SSN and Salary columns." -InformationAction Continue
     $CES = @()
     $CES += New-SqlColumnEncryptionSettings -ColumnName "HR.Employees.SSN" -EncryptionType "Randomized" -EncryptionKey "CEK1"
     $CES += New-SqlColumnEncryptionSettings -ColumnName "HR.Employees.Salary" -EncryptionType "Randomized" -EncryptionKey "CEK1"
-    Set-SqlColumnEncryption -InputObject $Database -ColumnEncryptionSettings $CES -UseOnlineApproach -LogFileDirectory .
+    Set-SqlColumnEncryption -InputObject $Database -ColumnEncryptionSettings $CES -UseOnlineApproach -LogFileDirectory . -KeyVaultAccessToken $keyVaultAccessToken
 
     Write-Information ">>> Database initialization complete." -InformationAction Continue
 }
