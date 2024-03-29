@@ -1,4 +1,4 @@
-# Workload templates and sample application for Sovereign Landing Zone
+# Microsoft Cloud for Sovereignty Lifecycle Tools<sup>PREVIEW</sup>, workload templates and sample application for Microsoft Cloud for Sovereignty (including Sovereign Landing Zone)
 
 ## Overview
 
@@ -8,11 +8,14 @@ To help accelerate customers time-to-value while assisting them in meeting their
 
 We're introducing two templates, and a sample sovereign application for learning purposes and to validate the functionality of SLZ policy sets and their enforcement of the confidentiality of services within the Sovereign Landing Zone.
 
-You can deploy all applications using the PowerShell and Bicep, and they are fully compatible with SLZ. To learn more about the advantages of using these templates, refer to the following links: 
+The Microsoft Cloud for Sovereignty Lifecycle Tools<sup>PREVIEW</sup> provides an early look at future functionality that is under consideration. It is deployed as a Virtual Machine in  your Azure tenant. Our goal is to provide an early glimpse into our future work that is under consideration and provide a forum on this repository for users to provide comments and feedback.
+
+You can deploy all applications using the PowerShell and Bicep, and they are fully compatible with SLZ. The Microsoft Cloud for Sovereignty Lifecycle Tools<sup>PREVIEW</sup> can be deployed as a Virtual Machine in your Azure tenant. To learn more about the advantages of using these templates, refer to the following links: 
 
 1. [**Azure Lighthouse template**](./workloadAccelerators/lighthouse/docs/lighthouseAccelerator.md)
 2. [**Azure Confidential Virtual Machine AMD-SNP template**](./workloadAccelerators/confidentialVirtualMachine/docs/cvmAccelerator.md)
 3. [**Confidential sample application**](./sovereignApplications/confidential/hrAppWorkload/README.md)
+4. [**Microsoft Cloud for Sovereignty Lifecycle Tools<sup>PREVIEW</sup>**](./prototypes/deploy-prototypes-1-getting-started.md)
 
 ## Shared responsibility and customer responsibilities
 
