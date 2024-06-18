@@ -81,7 +81,7 @@ jobs:
 
     - name: Build with dotnet (manual mode)
       if: matrix.build-mode == 'manual'
-      run: dotnet build --configuration Release
+      run: dotnet build sovereignApplications/confidential/contosoHR/src/ContosoHR.sln --configuration Release
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
