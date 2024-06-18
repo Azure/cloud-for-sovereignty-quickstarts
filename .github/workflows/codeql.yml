@@ -74,10 +74,10 @@ jobs:
     # to build your code.
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
-    - name: Setup .NET
+    - name: Setup .NET 5
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '5.0.x' # Specify the .NET version
+        dotnet-version: '5.0' # Specify the .NET version
 
     - name: Build with dotnet (manual mode)
       if: matrix.build-mode == 'manual'
