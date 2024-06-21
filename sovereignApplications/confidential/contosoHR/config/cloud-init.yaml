@@ -26,7 +26,7 @@ write_files:
     [Install]
     WantedBy=multi-user.target
 runcmd:
-- wget https://hrwebapp.blob.core.windows.net/contosohr/ContosoHR.zip
+- wget https://customerprototypes.blob.core.windows.net/contosohr/ContosoHR.zip
 - mkdir --parents /home/contosohr/ContosoHR
 - bsdtar --extract --file ContosoHR.zip --directory /home/contosohr/ContosoHR --strip-components=1
 - chown --recursive contosohr:contosohr /home/contosohr/
