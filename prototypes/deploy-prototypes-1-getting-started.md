@@ -2,9 +2,10 @@
 
 This is a brief introduction to our latest landing zone lifecycle management tools. Our aim is to enhance efficiency, reliability, and compliance features continually, aligning with evolving customer needs. We welcome feedback on these tools, which include:
 
-- [Landing Zone Drift Analyzer<sup>PREVIEW</sup>](#landing-zone-drift-analyzerpreview): This tool monitors and compares the current state of the cloud environment with its original intended landing zone configuration, identifying critical deviations or changes.
-- [Assessment<sup>PREVIEW</sup>](#assessmentpreview): This tool performs a pre-deployment evaluation of Azure resources against Microsoft Cloud for Sovereignty standard practices, including the evaluation of resource locations and Azure policy assignments.
-- [Policy Compiler<sup>PREVIEW</sup>](#policy-compilerpreview): This tool streamlines the policy management process. It systematically analyzes your organization's policy initiatives by examining key components.
+- [Landing Zone Drift Analyzer<sup>PREVIEW</sup>](#Drift-Analyzer): This tool monitors and compares the current state of the cloud environment with its original intended landing zone configuration, identifying critical deviations or changes.
+- [Assessment<sup>PREVIEW</sup>](#Assessment): This tool performs a pre-deployment evaluation of Azure resources against Microsoft Cloud for Sovereignty standard practices, including the evaluation of resource locations and Azure policy assignments.
+- [Policy Compiler<sup>PREVIEW</sup>](#Policy-Compiler): This tool streamlines the policy management process. It systematically analyzes your organization's policy initiatives by examining key components.
+- [Azure Resource Locations<sup>PREVIEW</sup>](#Azure-Resource-Locations): This tool displays location information for deployed resources in your Azure subscription.
 
 ## Preview Notice
 **Preview Terms**. Landing Zone Drift Analyzer<sup>PREVIEW</sup>, Assessment<sup>PREVIEW</sup>, and Policy Compiler<sup>PREVIEW</sup> (collectively, "Microsoft Cloud for Sovereignty Lifecycle Tools<sup>PREVIEW</sup>" or the "Preview") is licensed to you as part of your [Azure subscription](https://azure.microsoft.com/support/legal/) and subject to terms applicable to "Previews" as detailed in the Universal License Terms for Online Services section of the <u></u>Microsoft Product Terms and the [Microsoft Products and Services Data Protection Addendum ("DPA")](https://www.microsoft.com/licensing/terms/welcome/welcomepage). AS STATED IN THOSE TERMS, PREVIEWS ARE PROVIDED "AS-IS," "WITH ALL FAULTS," AND "AS AVAILABLE," AND ARE EXCLUDED FROM THE SERVICE LEVEL AGREEMENTS AND LIMITED WARRANTY. MICROSOFT MAKES NO WARRANTY THAT THE DATA AND CONTENT PROVIDED AS PART OF THE PREVIEW IS ACCURATE, UP-TO-DATE, OR COMPLETE. THE PREVIEW (1) IS NOT DESIGNED, INTENDED, OR MADE AVAILABLE AS LEGAL SERVICES, AND (2) IS NOT INTENDED TO SUBSTITUTE FOR PROFESSIONAL LEGAL COUNSEL OR JUDGMENT. THE DATA AND CONTENT PROVIDED THROUGH THE PREVIEW SHOULD NOT BE USED IN PLACE OF CONSULTING WITH A QUALIFIED PROFESSIONAL LEGAL PROFESSIONAL FOR YOUR SPECIFIC NEEDS. Previews may employ lesser or different privacy and security measures than those typically present in Azure Services. Unless otherwise noted, you should not use Previews to process Personal Data or other data that is subject to legal or regulatory compliance requirements. The following terms in the [DPA](https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA) do not apply to Previews: Processing of Personal Data; GDPR, Data Security, and HIPAA Business Associate. We may change or discontinue Previews at any time without notice. We also may choose not to release a Preview into General Availability.
@@ -85,6 +86,8 @@ The Landing Zone Drift Analyzer<sup>PREVIEW</sup> compares the current state of 
 
 Select a landing zone registration OR a landing zone configuration and management group below. If you select a registration then the registration will contain the landing zone configuration and management group hierarchy to compare. If you do not have a landing zone registration then you can manually select an existing landing zone configuration and root of a management group hierarchy to compare.
 
+You may also view a previous report by selecting an existing report from the dropdown. Reports are saved locally everytime an analysis is run. These reports can be deleted at any time by running the deleteReports.ps1 script in the Microsoft Cloud for Sovereignty Prototypes directory.
+
 
 # Assessment<sup>PREVIEW</sup>
 
@@ -114,14 +117,15 @@ The tool groups the findings of category evaluations  by the following severity 
 | Informational | Management Groups are not being used                           |
 | None          | No finding if Baseline Policy set is assigned                  |
 
-### Resource Residency
 
-The Resource Residency section of the tool displays essential details of all resources within the selected subscription, including Resource Location, Resource Name, and Resource ID, facilitating a comprehensive view of resource distribution within the environment. 
+*NOTE: The Resource Residency section of Assessment has been moved to Azure Resource Locations<sup>PREVIEW</sup>.*
 
 ### Running Assessment<sup>PREVIEW</sup>
 
 Select a subscription and click analyze to assess your current environment against a set of Microsoft Cloud for Sovereignty standard practices.
 Check the "Assess Confidential Computing" checkbox if you expect to enforce the use of confidential computing technologies in your subscription.
+
+You may also view a previous report by selecting an existing report from the dropdown. Reports are saved locally everytime an analysis is run. These reports can be deleted at any time by running the deleteReports.ps1 script in the Microsoft Cloud for Sovereignty Prototypes directory.
 
 # Policy Compiler<sup>PREVIEW</sup>
 
@@ -142,3 +146,16 @@ The current prototype of the Policy Compiler<sup>PREVIEW</sup> tool provides use
 - Most Restrictive (default if no option selected) - When compiling all initiatives into a singular custom initiative, the default initiative parameter value for policy effects will be the most restrictive default value (such as Deny) used by any of the initiatives.
 - Least Restrictive - When compiling all initiatives into a singular custom initiative, the default initiative parameter value for policy effects will be the least restrictive default value (such as Audit) used by any of the initiatives.
 - Delta - Will generate a custom initiative that contains all policies and their respective groupings and parameters that are not found in the primary initiative.
+
+
+# Azure Resource Locations<sup>PREVIEW</sup>
+The Azure Resource Locations<sup>PREVIEW</sup> feature reports the Azure resource location information as provided by your Azure subscription. This information is displayed in a sorted table as well as visualized onto a map. The Azure Resource Locations<sup>PREVIEW</sup> displays essential details of all resources within the selected subscription, including Resource Location, Resource Name, and Resource ID, facilitating a comprehensive view of resource distribution within the environment. 
+
+
+### Using Azure Resource Locations<sup>PREVIEW</sup>
+
+In order to use Azure Resource Locations you will need to authenticate to Azure and then simply choose a subscription from the dropdown and click Analyze.
+
+*NOTE: This is a point in time analysis and you will need to press Analyze to see updates from your Azure subscription reflected on the map or in the table.*
+
+You may also view a previous report by selecting an existing report from the dropdown. Reports are saved locally everytime an analysis is run. These reports can be deleted at any time by running the deleteReports.ps1 script in the Microsoft Cloud for Sovereignty Prototypes directory.
