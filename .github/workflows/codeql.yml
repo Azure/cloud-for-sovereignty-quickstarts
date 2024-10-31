@@ -12,7 +12,13 @@
 name: "CodeQL with manual C# build"
 
 on:
-  workflow_dispatch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '0 0 * * 0' # Sunday at 12am editby: ugreg
+  workflow_dispatch: # Enable workflow to be triggered manually
 
 jobs:
   analyze:
